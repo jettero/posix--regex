@@ -41,10 +41,12 @@ regcomp(self,regular,opts)
         croak("error compiling regular expression, %s", errmsg);
     }
 
-    // SV**  hv_store(HV*, const char* key, U32 klen, SV* val, U32 hash); // U32 hash is the pre-computed key (if you like)
-    hv_store(me, regpk, regpk_len, newSVuv((unsigned int) r), 0);
+    // NOTE: using PTR2UV instead of a cast to (unsigned int) is all thanks to Prof_vincent/vincent @ #perl on freenode
 
-    // warn("regcomp r=%d", (unsigned int)r);
+    // SV**  hv_store(HV*, const char* key, U32 klen, SV* val, U32 hash); // U32 hash is the pre-computed key (if you like)
+    hv_store(me, regpk, regpk_len, newSVuv(PTR2UV(r)), 0);
+
+    // warn("regcomp r=%d", PTR2UV(r));
 
 void
 cleanup_memory(self)
@@ -61,11 +63,13 @@ cleanup_memory(self)
     if( SvTYPE(me) != SVt_PVHV )
         croak("error trying to cleanup regular in a blessed reference that isn't a hash reference");
 
+    // NOTE: using INT2PTR(p,u) instead of a cast to (regex_t *) by hand is all thanks to Prof_vincent/vincent @ #perl on freenode
+
     // SV**  hv_fetch(HV*, const char* key, U32 klen, I32 lval); lval indicates whether this is part of a store operation also
-    r = (regex_t *) SvUV(*(hv_fetch(me, regpk, regpk_len, 0)));
+    r = INT2PTR(regex_t *, SvUV(*(hv_fetch(me, regpk, regpk_len, 0))) );
 
     CODE:
-    // warn("DESTROY r=%d", (unsigned int)r);
+    // warn("DESTROY r=%d", PTR2UV(r));
 
     regfree(r); free(r);
 
@@ -89,7 +93,7 @@ regexec(self,string,opts)
         croak("error trying to execute regular expression in a blessed reference that isn't a hash reference");
 
     // SV**  hv_fetch(HV*, const char* key, U32 klen, I32 lval); lval indicates whether this is part of a store operation also
-    r = (regex_t *) SvUV(*(hv_fetch(me, regpk, regpk_len, 0)));
+    r = INT2PTR(regex_t *, SvUV(*(hv_fetch(me, regpk, regpk_len, 0))) );
 
     CODE:
     err = regexec(r, string, 0, (regmatch_t *) NULL, opts); // | REG_NOSUB); // TODO: can't NOSUB here, that goes to regcomp!!
@@ -132,7 +136,7 @@ regexec_wa(self,tomatch,opts)
         croak("error trying to execute regular expression in a blessed reference that isn't a hash reference");
 
     // SV**  hv_fetch(HV*, const char* key, U32 klen, I32 lval); lval indicates whether this is part of a store operation also
-    r = (regex_t *) SvUV(*(hv_fetch(me, regpk, regpk_len, 0)));
+    r = INT2PTR(regex_t *, SvUV(*(hv_fetch(me, regpk, regpk_len, 0))) );
 
     CODE:
     err = regexec(r, tomatch, 10, mat, opts);
