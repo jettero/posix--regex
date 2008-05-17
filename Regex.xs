@@ -29,11 +29,11 @@ regcomp(self,regular,opts)
         croak("error allocating memory for regular");
 
     if( !sv_isobject(self) )
-        croak("error trying to compile regular in an unblessed reference");
+        croak("error trying to compile regular expression in an unblessed reference");
 
     me = (HV*) SvRV(self); // de-reference us
     if( SvTYPE(me) != SVt_PVHV )
-        croak("error trying to compile regular in a blessed reference that isn't a hash reference");
+        croak("error trying to compile regular expression in a blessed reference that isn't a hash reference");
 
     CODE:
     if( (err = regcomp(r, regular, opts)) != REG_NOERROR ) {
@@ -55,11 +55,11 @@ cleanup_memory(self)
     HV* me;
 
     if( !sv_isobject(self) )
-        croak("error trying to compile regular in an unblessed reference");
+        croak("error trying to cleanup regular in an unblessed reference");
 
     me = (HV*) SvRV(self); // de-reference us
     if( SvTYPE(me) != SVt_PVHV )
-        croak("error trying to compile regular in a blessed reference that isn't a hash reference");
+        croak("error trying to cleanup regular in a blessed reference that isn't a hash reference");
 
     // SV**  hv_fetch(HV*, const char* key, U32 klen, I32 lval); lval indicates whether this is part of a store operation also
     r = (regex_t *) SvUV(*(hv_fetch(me, regpk, regpk_len, 0)));
@@ -82,11 +82,11 @@ regexec(self,string,opts)
     char *errmsg[256];
 
     if( !sv_isobject(self) )
-        croak("error trying to compile regular in an unblessed reference");
+        croak("error trying to execute regular expression in an unblessed reference");
 
     me = (HV*) SvRV(self); // de-reference us
     if( SvTYPE(me) != SVt_PVHV )
-        croak("error trying to compile regular in a blessed reference that isn't a hash reference");
+        croak("error trying to execute regular expression in a blessed reference that isn't a hash reference");
 
     // SV**  hv_fetch(HV*, const char* key, U32 klen, I32 lval); lval indicates whether this is part of a store operation also
     r = (regex_t *) SvUV(*(hv_fetch(me, regpk, regpk_len, 0)));
@@ -99,7 +99,7 @@ regexec(self,string,opts)
 
     } else if( err ) {
         regerror(err, r, (char *)errmsg, 250); // 255 or 256?  screw it, 250
-        croak("error compiling regular expression, %s", errmsg);
+        croak("error executing regular expression, %s", errmsg);
 
     } else {
         RETVAL = 1;
@@ -125,11 +125,11 @@ regexec_wa(self,tomatch,opts)
     AV* retav = newAV();
 
     if( !sv_isobject(self) )
-        croak("error trying to compile regular in an unblessed reference");
+        croak("error trying to execute regular expression in an unblessed reference");
 
     me = (HV*) SvRV(self); // de-reference us
     if( SvTYPE(me) != SVt_PVHV )
-        croak("error trying to compile regular in a blessed reference that isn't a hash reference");
+        croak("error trying to execute regular expression in a blessed reference that isn't a hash reference");
 
     // SV**  hv_fetch(HV*, const char* key, U32 klen, I32 lval); lval indicates whether this is part of a store operation also
     r = (regex_t *) SvUV(*(hv_fetch(me, regpk, regpk_len, 0)));
@@ -144,7 +144,7 @@ regexec_wa(self,tomatch,opts)
 
     } else if( err ) {
         regerror(err, r, (char *)errmsg, 250); // 255 or 256?  screw it, 250
-        croak("error compiling regular expression, %s", errmsg);
+        croak("error executing regular expression, %s", errmsg);
 
     } else {
         // find substrings and push them into retav
