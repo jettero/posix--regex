@@ -11,6 +11,7 @@
 
 MODULE = POSIX::Regex   PACKAGE = POSIX::Regex		
 
+PROTOTYPES: DISABLE
 INCLUDE: const-xs.inc
 
 void
