@@ -4,12 +4,17 @@
 use strict;
 use Test;
 
-plan tests => 3;
+plan tests => 5;
 
 use POSIX::Regex;
 
-my $r = new POSIX::Regex('a\(a\|b\)c');
+my $r1 = new POSIX::Regex('cd');
 
-ok( scalar $r->match("aac"), 1 );
-ok( scalar $r->match("abc"), 1 );
-ok( scalar $r->match("azc"), 0 );
+ok( scalar $r1->match("abcd"), 1 );
+ok( scalar $r1->match("dcba"), 0 );
+
+my $r2 = new POSIX::Regex('a\(a\|b\)c');
+
+ok( scalar $r2->match("aac"), 1 );
+ok( scalar $r2->match("abc"), 1 );
+ok( scalar $r2->match("azc"), 0 );
