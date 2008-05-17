@@ -1,0 +1,17 @@
+0.89:  Fri Aug 18 16:21:57 EDT 2006
+   - jettero upgraded the version to 89...
+
+0.54:  Fri Aug 18 16:21:33 EDT 2006
+   - jettero added a few gnu regex options
+
+0.53:  Fri Aug 18 15:50:24 EDT 2006
+   - jettero got the matching routines to work great
+
+0.52:  Fri Aug 18 14:24:07 EDT 2006
+   - jettero got some of the primary methods like regcomp and DESTROY
+     working
+
+0.01  Thu Aug 17 18:16:16 2006
+    - original version; created by h2xs 1.23 with options --skip-ppport
+      /usr/include/regex.h
+
