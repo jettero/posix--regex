@@ -8,7 +8,8 @@ plan tests => 7;
 
 use POSIX::Regex;
 
-my $r = new POSIX::Regex('a\(a\|b\)\(c\)');
+# NOTE: BSD doesn't have \| on "obsolete" basic REs for some reason
+my $r = new POSIX::Regex($^O =~ m/bsd/i ? 'a\([ab]\)\(c\)' : 'a\(a\|b\)\(c\)');
 
 my @m = $r->match("aac");
 ok( $m[0], "aac" );

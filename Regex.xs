@@ -6,6 +6,10 @@
 
 #include "const-c.inc"
 
+#ifndef REG_NOERROR
+ #define REG_NOERROR 0
+#endif
+
 #define regpk     "__reg_pointer"
 #define regpk_len 13
 
