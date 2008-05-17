@@ -1,3 +1,9 @@
+0.90: Sat May 17 06:54:46 EDT 2008
+   - Fixed various error message typos
+   - Fixed various BSD problems that hopefully also fix the same problems in solaris
+     (installing a bsd virtual machine was enough trouble, ... where would I find solaris?)
+     (bottom line: god bless the perl testers!)
+
 0.89:  Fri Aug 18 16:21:57 EDT 2006
    - jettero upgraded the version to 89...
 
