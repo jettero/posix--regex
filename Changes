@@ -1,3 +1,7 @@
+0.90.1: Sun May 18 09:17:56 EDT 2008
+   - Made the Makefile.PL require a modern ExtUtils::MakeMaker w/ ExtUtils::Constant
+     (bsd 6.1 is apparently pure evil)
+
 0.90: Sat May 17 06:54:46 EDT 2008
    - Fixed various error message typos
    - Fixed various BSD problems that hopefully also fix the same problems in solaris
