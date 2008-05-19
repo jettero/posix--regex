@@ -1,3 +1,9 @@
+0.90.2: Sun May 18 09:17:56 EDT 2008
+   - Windows? Seriously?  You're going to need libc I guess.  Really, I never
+     gussed windows people would try to compile this.  CPAN Testers rocks in that way.
+   - Devel::CheckLib now looks for libc and regex.h
+
+
 0.90.1: Sun May 18 09:17:56 EDT 2008
    - Made the Makefile.PL require a modern ExtUtils::MakeMaker w/ ExtUtils::Constant
      (bsd 6.1 is apparently pure evil)

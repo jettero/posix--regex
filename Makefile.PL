@@ -1,4 +1,7 @@
 use ExtUtils::MakeMaker;
+use Devel::CheckLib;  
+
+check_lib_or_exit( lib => 'c', header => "regex.h" );
 
 WriteMakefile(
     NAME              => 'POSIX::Regex',
