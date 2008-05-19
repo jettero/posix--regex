@@ -2,7 +2,10 @@
    - Windows? Seriously?  You're going to need libc I guess.  Really, I never
      gussed windows people would try to compile this.  CPAN Testers rocks in that way.
    - Devel::CheckLib now looks for libc and regex.h
-
+   - Wow, linux (really gnu platforms) is the only place where \| works under
+     basic REs.  gnu grep apparently lexes it's own basic REs and only uses
+     regcomp() for certain balancing error-checks.  I did not know that.
+     Again: perl testers rock.
 
 0.90.1: Sun May 18 09:17:56 EDT 2008
    - Made the Makefile.PL require a modern ExtUtils::MakeMaker w/ ExtUtils::Constant
