@@ -6,10 +6,11 @@ use Test;
 
 plan tests => 7;
 
-use POSIX::Regex;
+use POSIX::Regex qw(REG_EXTENDED);
 
 # NOTE: BSD doesn't have \| on "obsolete" basic REs for some reason
-my $r = new POSIX::Regex($^O =~ m/bsd/i ? 'a\([ab]\)\(c\)' : 'a\(a\|b\)\(c\)');
+# NOTE: wow, only linux has the \| under basic REs.
+my $r = new POSIX::Regex('a(a|b)(c)', REG_EXTENDED);
 
 my @m = $r->match("aac");
 ok( $m[0], "aac" );
