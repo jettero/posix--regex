@@ -1,21 +1,24 @@
 0.90.2: Sun May 18 09:17:56 EDT 2008
-   - Windows? Seriously?  You're going to need libc I guess.  Really, I never
-     gussed windows people would try to compile this.  CPAN Testers rocks in that way.
+   - Windows? Seriously?  You're going to need libc I guess.
+     Really, I never gussed windows people would try to compile
+     this.  CPAN Testers rocks in that way.
    - Devel::CheckLib now looks for libc and regex.h
-   - Wow, linux (really gnu platforms) is the only place where \| works under
-     basic REs.  gnu grep apparently lexes it's own basic REs and only uses
-     regcomp() for certain balancing error-checks.  I did not know that.
-     Again: perl testers rock.
+   - Wow, linux (really gnu platforms) is the only place where \|
+     works under basic REs.  gnu grep apparently lexes it's own
+     basic REs and only uses regcomp() for certain balancing
+     error-checks.  I did not know that.  Again: perl testers
+     rock.
 
 0.90.1: Sun May 18 09:17:56 EDT 2008
-   - Made the Makefile.PL require a modern ExtUtils::MakeMaker w/ ExtUtils::Constant
-     (bsd 6.1 is apparently pure evil)
+   - Made the Makefile.PL require a modern ExtUtils::MakeMaker w/
+     ExtUtils::Constant (bsd 6.1 is apparently pure evil)
 
 0.90: Sat May 17 06:54:46 EDT 2008
    - Fixed various error message typos
-   - Fixed various BSD problems that hopefully also fix the same problems in solaris
-     (installing a bsd virtual machine was enough trouble, ... where would I find solaris?)
-     (bottom line: god bless the perl testers!)
+   - Fixed various BSD problems that hopefully also fix the same
+     problems in solaris (installing a bsd virtual machine was
+     enough trouble, ... where would I find solaris?) (bottom
+     line: god bless the perl testers!)
 
 0.89:  Fri Aug 18 16:21:57 EDT 2006
    - jettero upgraded the version to 89...
@@ -27,10 +30,10 @@
    - jettero got the matching routines to work great
 
 0.52:  Fri Aug 18 14:24:07 EDT 2006
-   - jettero got some of the primary methods like regcomp and DESTROY
-     working
+   - jettero got some of the primary methods like regcomp and
+     DESTROY working
 
 0.01  Thu Aug 17 18:16:16 2006
-    - original version; created by h2xs 1.23 with options --skip-ppport
-      /usr/include/regex.h
+    - original version; created by h2xs 1.23 with options
+      --skip-ppport /usr/include/regex.h
 
