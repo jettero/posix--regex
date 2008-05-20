@@ -1,4 +1,4 @@
-0.90.2: Sun May 18 09:17:56 EDT 2008
+0.90.3: Sun May 18 09:17:56 EDT 2008
    - Windows? Seriously?  You're going to need libc I guess.
      Really, I never gussed windows people would try to compile
      this.  CPAN Testers rocks in that way.
