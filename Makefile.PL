@@ -1,5 +1,10 @@
 use ExtUtils::MakeMaker;
-use Devel::CheckLib;  
+eval 'use Devel::CheckLib';
+
+if( $@ ) {
+    warn "Warning: prerequisite Devel::CheckLib 0 not found.";
+    exit 0;
+}
 
 check_lib_or_exit( lib => 'c', header => "regex.h" );
 
