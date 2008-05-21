@@ -1,3 +1,7 @@
+0.90.4: Wed May 21 12:56:49 EDT 2008
+   - I misunderstood the use of Devel::CheckLib.
+     You're meant to include it with your distribution, duh.
+
 0.90.3: Sun May 18 09:17:56 EDT 2008
    - Windows? Seriously?  You're going to need libc I guess.
      Really, I never gussed windows people would try to compile
