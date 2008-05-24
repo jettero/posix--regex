@@ -1,3 +1,7 @@
+0.90.8: Wed May 21 12:56:49 EDT 2008
+   - Gah, Andreas Koenig himself took the trouble to point out further problems with my 
+     three number versioning.  I'll now 'use version' as he suggests.
+
 0.90.6: Wed May 21 12:56:49 EDT 2008
    - The Irix compiler (and probably others) can't deal with having
      if() blocks in the PREINIT -- a braindead error on my part.
