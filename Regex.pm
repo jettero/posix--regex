@@ -18,7 +18,7 @@ our @EXPORT_OK = ( @{$EXPORT_TAGS{all}} );
 our @EXPORT = qw();
 
 use version;
-our $VERSION = version->new('0.90.8')->numify;
+our $VERSION = qv('0.90.9');
 
 # AUTOLOAD {{{
 sub AUTOLOAD {

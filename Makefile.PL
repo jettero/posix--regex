@@ -12,6 +12,7 @@ WriteMakefile(
     AUTHOR            => 'Paul Miller <jettero@cpan.org>',
     'PREREQ_PM'    => {
         'ExtUtils::Constant' => 0.16,
+        version=>0,
     }
 );
 
