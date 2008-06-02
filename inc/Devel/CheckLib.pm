@@ -1,6 +1,7 @@
 # $Id: CheckLib.pm,v 1.22 2008/03/12 19:52:50 drhyde Exp $
 
-package Devel::CheckLib;
+package #
+Devel::CheckLib;
 
 use strict;
 use vars qw($VERSION @ISA @EXPORT);
