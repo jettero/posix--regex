@@ -1,3 +1,7 @@
+0.90.11: Mon Jun  2 08:26:11 EDT 2008
+   - was using Devel::CheckLib wrong.  Use use-devel-checklib
+     script next time
+
 0.90.10: Tue May 27 12:11:11 EDT 2008
    - (wow, use version has to be on the same line as our $VERSION
       for older EUMM)
