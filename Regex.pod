@@ -1,0 +1,92 @@
+=head1 NAME
+
+POSIX::Regex - OO interface for the gnu regex engine
+
+=head1 SYNOPSIS
+
+    use POSIX::Regex qw(:all);
+
+    my $reg = new POSIX::Regex('a\(a\|b\)\(c\)');
+
+    print "You win a toy!\n" if $reg->match("aac");
+
+    if( my @m = $reg->match("abc") ) { # returns the matches
+        print "entire match: ", shift @m, "\n";
+        print "\tgroup match: $_\n" for @m;
+
+    } else {
+        print "No toy for you!\n";
+    }
+
+=head1 REGULAR OPTIONS
+
+(All of the following text was plagarized without edit from 'man 3 regex'.)
+
+If you choose to import :all then you will have the following regular options
+that you may optionally pass to new() (aka regcomp).
+
+=head2 REG_ICASE
+
+Do  not differentiate case.  Subsequent regexec() searches using this pattern
+buffer will be case insen- sitive.
+
+=head2 REG_EXTENDED
+
+Use POSIX Extended Regular Expression syntax when interpreting regex.  If not
+set, POSIX  Basic  Regular Expression syntax is used.
+
+=head2 REG_NEWLINE
+
+Match-any-character operators don't match a newline.
+
+A non-matching list ([^...])  not containing a newline does not match a newline.
+
+Match-beginning-of-line operator (^) matches the empty string immediately after
+a newline, regardless of whether eflags, the execution flags of regexec(),
+contains REG_NOTBOL.
+
+Match-end-of-line operator ($) matches the empty string immediately  before  a
+newline,  regardless  of whether eflags contains REG_NOTEOL.
+
+=head2 REG_NOTBOL
+
+The match-beginning-of-line operator always fails to match  (but see  the
+compilation  flag  REG_NEWLINE above) This flag may be used when different
+portions of a string are passed to regexec() and the beginning of the string
+should not be interpreted as the beginning of the line.
+
+=head2 REG_NOTEOL
+
+=head1 AUTHOR
+
+Jettero Heller <japh@voltar-confed.org>
+
+Jet is using this software in his own projects...  If you find bugs, please
+please please let him know. :) Actually, let him know if you find it handy at
+all.  Half the fun of releasing this stuff is knowing that people use it.
+
+Additionally, he is aware that the documentation sucks.  Should you email him
+for help, he will most likely try to give it.
+
+=head1 COPYRIGHT
+
+GPL! (and/or whatever license the gnu regex engine is under)
+
+Though, additionally, I will say that I'll be tickled if you were to include
+this package in any commercial endeavor.  Also, any thoughts to the effect that
+using this module will somehow make your commercial package GPL should be washed
+away.
+
+I hereby release you from any such silly conditions -- if possible while still
+matching the license from gnu regex.
+
+This package and any modifications you make to it must remain GPL.  Any programs
+you (or your company) write shall remain yours (and under whatever copyright you
+choose) even if you use this package's intended and/or exported interfaces in
+them.
+
+(again, if possible)
+
+=head1 SEE ALSO
+
+perl(1), man 3 regex

@@ -1,3 +1,6 @@
+0.90.12: Tue Jul 22 18:32:27 EDT 2008
+   - moved to module::build
+
 0.90.11: Mon Jun  2 08:26:11 EDT 2008
    - was using Devel::CheckLib wrong.  Use use-devel-checklib
      script next time
