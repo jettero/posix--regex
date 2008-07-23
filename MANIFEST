@@ -15,3 +15,4 @@ Build.PL
 Regex.pod
 lib/POSIX/const-c.inc
 lib/POSIX/const-xs.inc
+META.yml

@@ -8,7 +8,7 @@ my $build = Module::Build->new(
     pod_files         => { 'Regex.pod' => 'lib/POSIX/Regex.pod' },
      xs_files         => { 'Regex.xs'  => 'lib/POSIX/Regex.xs'  },
     requires          => { version => 0, },
-    build_requires    => { "ExtUtils::Constant" => 0 },
+    build_requires    => { "ExtUtils::Constant" => 0, 'ExtUtils::CBuilder' => 0, },
 );
 $build->create_build_script;
 
