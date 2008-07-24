@@ -20,12 +20,16 @@ my @names = (qw(
 
 eval 'use ExtUtils::Constant';
 if( not $@ ) {
-    ExtUtils::Constant::WriteConstants(
-        NAME         => 'POSIX::Regex',
-        NAMES        => \@names,
-        DEFAULT_TYPE => 'IV',
-        C_FILE       => 'const-c.inc',
-        XS_FILE      => 'const-xs.inc',
-    );
+    eval {
+        ExtUtils::Constant::WriteConstants(
+            NAME         => 'POSIX::Regex',
+            NAMES        => \@names,
+            DEFAULT_TYPE => 'IV',
+            C_FILE       => 'const-c.inc',
+            XS_FILE      => 'const-xs.inc',
+        );
+    };
+
+    warn "problem rebuilding const-*.inc: $@\n" if $@;
 }
 
