@@ -5,7 +5,7 @@ use warnings;
 use Carp;
 
 require Exporter;
-use AutoLoader;
+require AutoLoader;
 use base 'Exporter';
 
 our %EXPORT_TAGS = ( all => [qw(
