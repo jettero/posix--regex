@@ -13,6 +13,6 @@ t/05_extended.t
 inc/Devel/CheckLib.pm
 Build.PL
 Regex.pod
-lib/POSIX/const-c.inc
-lib/POSIX/const-xs.inc
+const-c.inc
+const-xs.inc
 META.yml

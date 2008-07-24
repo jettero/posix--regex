@@ -24,8 +24,8 @@ if( not $@ ) {
         NAME         => 'POSIX::Regex',
         NAMES        => \@names,
         DEFAULT_TYPE => 'IV',
-        C_FILE       => 'lib/POSIX/const-c.inc',
-        XS_FILE      => 'lib/POSIX/const-xs.inc',
+        C_FILE       => 'const-c.inc',
+        XS_FILE      => 'const-xs.inc',
     );
 }
 
