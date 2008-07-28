@@ -1,3 +1,8 @@
+use strict;
+use lib 'inc';
+use Devel::CheckLib;
+
+check_lib_or_exit( lib => 'c', header => "regex.h" );
 
 open DUMP, ">Makefile" or die $!;
 print DUMP << "EOMF"

@@ -1,3 +1,6 @@
+0.90.15: Mon Jul 28 06:39:12 EDT 2008
+   - added lib checkers to both .PLs
+
 0.90.14: Thu Jul 24 07:13:03 EDT 2008
    - We don't need the AutoLoader to use AUTOLOAD, in fact, all
      it does is try to pick up the autosplit.ix

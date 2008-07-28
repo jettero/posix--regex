@@ -1,3 +1,8 @@
+use strict;
+use lib 'inc';
+use Devel::CheckLib;
+
+check_lib_or_exit( lib => 'c', header => "regex.h" );
 
 use Module::Build;
 my $build = Module::Build->new(
