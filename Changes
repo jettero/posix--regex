@@ -1,3 +1,7 @@
+0.90.16: Wed Jul 30 07:28:25 EDT 2008
+   - changed my author and copyright sections, they were all
+     wrong
+
 0.90.15: Mon Jul 28 06:39:12 EDT 2008
    - added lib checkers to both .PLs
 
