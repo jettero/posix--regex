@@ -1,6 +1,5 @@
 inc/Devel/CheckLib.pm
 Changes
-Makefile.PL
 MANIFEST
 README
 Regex.xs
