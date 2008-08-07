@@ -4,7 +4,7 @@
 
 #include <regex.h>
 
-#include "../../const-c.inc"
+#include "const-c.inc"
 
 #ifndef REG_NOERROR
  #define REG_NOERROR 0
@@ -16,7 +16,7 @@
 MODULE = POSIX::Regex   PACKAGE = POSIX::Regex		
 
 PROTOTYPES: DISABLE
-INCLUDE: ../../const-xs.inc
+INCLUDE: const-xs.inc
 
 void
 regcomp(self,regular,opts)

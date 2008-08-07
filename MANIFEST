@@ -10,7 +10,7 @@ t/03_complicated_matching.t
 t/04_case.t
 t/05_extended.t
 inc/Devel/CheckLib.pm
-Build.PL
+Makefile.PL
 Regex.pod
 const-c.inc
 const-xs.inc
