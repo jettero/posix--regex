@@ -1,3 +1,11 @@
+1.000_000: Thu Aug  7 15:25:12 EDT 2008
+   - after much hullabaloo, I have determined that version.pm
+     needs Module::Build to work reliably with XS and I have
+     further determined that Module::Build causes more problems
+     than it solves.  I hate it.  So I'm removing version.pm and
+     Module::Build and going back to the ultra stable
+     ExtUtils::MakeMaker.
+
 0.90.16: Wed Jul 30 07:28:25 EDT 2008
    - changed my author and copyright sections, they were all
      wrong
