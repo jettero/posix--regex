@@ -14,9 +14,9 @@ our %EXPORT_TAGS = ( all => [qw(
 )]);
 
 our @EXPORT_OK = ( @{$EXPORT_TAGS{all}} );
-our @EXPORT = qw();
+our @EXPORT = ();
 
-use version; our $VERSION = qv('0.90.16');
+our $VERSION = 1.000_000;
 
 # AUTOLOAD {{{
 sub AUTOLOAD {
