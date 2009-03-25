@@ -1,4 +1,4 @@
-1.000_000: Thu Aug  7 15:25:12 EDT 2008
+1.0: Thu Aug  7 15:25:12 EDT 2008
    - after much hullabaloo, I have determined that version.pm
      needs Module::Build to work reliably with XS and I have
      further determined that Module::Build causes more problems
