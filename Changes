@@ -1,3 +1,7 @@
+1.0001: Wed Mar 25 11:21:42 EDT 2009
+   - releasing this as 1.0.1 because I had accidentally released
+     it as a developer release
+
 1.0: Thu Aug  7 15:25:12 EDT 2008
    - after much hullabaloo, I have determined that version.pm
      needs Module::Build to work reliably with XS and I have
