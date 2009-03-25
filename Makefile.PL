@@ -12,7 +12,19 @@ WriteMakefile(
     AUTHOR            => 'Paul Miller <jettero@cpan.org>',
     'PREREQ_PM'    => {
         'ExtUtils::Constant' => 0.16,
-    }
+    },
+
+    ($ExtUtils::MakeMaker::VERSION ge '6.48'? 
+        (MIN_PERL_VERSION => 5.008,
+            META_MERGE => {
+                keywords => ['posix', 'regex'],
+                resources=> {
+                    repository => 'http://github.com/jettero/posix--regex/tree',
+                },
+            },
+
+        LICENSE	=> 'lgpl2',
+    ) : ()),
 );
 
 my @names = (qw(
