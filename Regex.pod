@@ -67,7 +67,13 @@ all.  Half the fun of releasing this stuff is knowing that people use it.
 
 =head1 COPYRIGHT
 
-Copyright (c) 2007 Paul Miller -- LGPL [attached]
+Copyright (c) 2007 Paul Miller -- LGPL2
+
+=head1 FAQ
+
+Yes, I'm aware there's special support for alternate regular expression systems
+in perl 5.10.x ... let me know when people are done with perl 5.6 and 5.8 and
+I'll delete this from CPAN.  Thanks.
 
 =head1 SEE ALSO
 
