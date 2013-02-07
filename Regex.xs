@@ -172,3 +172,24 @@ regexec_wa(self,tomatch,opts)
 
     OUTPUT:
     RETVAL
+
+SV*
+re_nsub(self)
+    SV   *self
+    PREINIT:
+    regex_t *r;
+    HV* me;
+
+    CODE:
+    if( !sv_isobject(self) )
+        croak("error trying to execute regular expression in an unblessed reference");
+
+    me = (HV*) SvRV(self); // de-reference us
+    if( SvTYPE(me) != SVt_PVHV )
+        croak("error trying to execute regular expression in a blessed reference that isn't a hash reference");
+
+    r = INT2PTR(regex_t *, SvUV(*(hv_fetch(me, regpk, regpk_len, 0))) );
+
+    ST(0) = sv_newmortal();
+    sv_setnv( ST(0), r->re_nsub );
+
