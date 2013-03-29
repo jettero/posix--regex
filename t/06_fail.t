@@ -11,9 +11,9 @@ use POSIX::Regex qw(REG_EXTENDED);
 
 my $r;
 
-eval { $r = new POSIX::Regex('cd(', REG_EXTENDED); return; };
+eval { $r = new POSIX::Regex('cd(', REG_EXTENDED); };
 my $err = $@;
 	
 ok(!$r);
 
-ok($err, qr/parentheses not balanced/);
+ok($err, qr/(?:balanced|unbalanced|unmatched)/i);
