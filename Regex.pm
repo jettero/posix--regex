@@ -16,7 +16,7 @@ our %EXPORT_TAGS = ( all => [qw(
 our @EXPORT_OK = ( @{$EXPORT_TAGS{all}} );
 our @EXPORT = ();
 
-our $VERSION = 1.0002;
+our $VERSION = 1.0003;
 
 # AUTOLOAD {{{
 sub AUTOLOAD {

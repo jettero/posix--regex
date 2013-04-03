@@ -16,4 +16,4 @@ my $err = $@;
 	
 ok(!$r);
 
-ok($err, qr/(?:balanced|unbalanced|unmatched)/i);
+ok($err, qr/(?:balanced|unbalanced|unmatched|error)/i);
