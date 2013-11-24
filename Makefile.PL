@@ -1,4 +1,3 @@
-
 use strict;
 use lib 'inc';
 use ExtUtils::MakeMaker;
@@ -19,7 +18,7 @@ WriteMakefile(
             META_MERGE => {
                 keywords => ['posix', 'regex'],
                 resources=> {
-                    repository => 'http://github.com/jettero/posix--regex/tree',
+                    repository => 'http://github.com/jettero/posix--regex',
                 },
             },
 
